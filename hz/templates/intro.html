@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <title>Surprise Pass!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+</head>
+
+<body>
+<!-- partial:index.partial.html -->
+<!-- multistep form -->
+<div id="msform">
+   <ul id="progressbar" class="specific-element" style="visibility: hidden">
+    <li class="active">Personal details</li>
+    <li class="active">Preferences</li>
+    <li class="active">Surprise!</li>
+  </ul>
+  <!-- progressbar -->
+  <!-- fieldsets -->
+  <div id="nice_box">
+      <img src="{{url_for('static', filename='img/sbb.png')}}" style="width: 250px; height: auto;"/>
+      <br><br><br>
+    <h2 class="fs-title">Welcome to</h2>
+      <h1 class="fs-subtitle2">Surprise Pass</h1>
+    <br>
+      <ul class="nav nav-pills nav-stacked">
+    <li class="active"><a href="/buy">Surprise Me!</a></li>
+  </ul>
+<!--      <h1><a class="nav nav-pills" href="/buy">Surprise Me</a></h1>-->
+  </div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+<script src="{{url_for('static', filename='script.js')}}"></script>
+
+</body>
+</html>

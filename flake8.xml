@@ -1,0 +1,20 @@
+<code_scheme name="flake8" version="173">
+  <option name="AUTODETECT_INDENTS" value="false" />
+  <option name="LINE_SEPARATOR" value="&#xA;" />
+  <option name="ALIGN_MULTILINE_PARAMETERS_IN_CALLS" value="true" />
+  <MarkdownNavigatorCodeStyleSettings>
+    <option name="RIGHT_MARGIN" value="72" />
+  </MarkdownNavigatorCodeStyleSettings>
+  <Python>
+    <option name="ALIGN_COLLECTIONS_AND_COMPREHENSIONS" value="false" />
+    <option name="ALIGN_MULTILINE_IMPORTS" value="false" />
+  </Python>
+  <codeStyleSettings language="Python">
+    <option name="RIGHT_MARGIN" value="120" />
+    <option name="KEEP_LINE_BREAKS" value="false" />
+    <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
+    <option name="ALIGN_MULTILINE_PARAMETERS_IN_CALLS" value="false" />
+    <option name="WRAP_LONG_LINES" value="true" />
+    <option name="WRAP_ON_TYPING" value="1" />
+  </codeStyleSettings>
+</code_scheme>

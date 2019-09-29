@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <title>Surprise Pass!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+</head>
+
+<body>
+<!-- partial:index.partial.html -->
+<!-- multistep form -->
+<div id="msform">
+   <ul id="progressbar" class="specific-element">
+    <li class="active">Personal details</li>
+    <li class="active">Preferences</li>
+    <li class="active">Surprise!</li>
+  </ul>
+  <!-- progressbar -->
+  <!-- fieldsets -->
+  <div id="nice_box">
+    <h2 class="fs-title">Here is your trip!</h2>
+    <br>
+      <h1 class="fs-title">
+          {{ destination }}
+      </h1>
+      <img src="{{weather_icon}}"/>
+      <h2 class="fs-subtitle">{{weather}}, {{weather_temp}} °C</h2>
+    <div align="left">
+    <br>
+      <p><h2 class="fs-subtitle">Departure</h2></p>
+    <p><span class="glyphicon glyphicon-pushpin"></span>         {{destination}}</p>
+    <p><span class="glyphicon glyphicon-transfer"></span>        {{connections_nb}}</p>
+    <p><span class="glyphicon glyphicon-piggy-bank"></span>      {{price}} CHF</p>
+    <p><span class="glyphicon glyphicon-time"></span>      {{duration}}</p>
+    <br>
+    <ul id="navigation" >
+    {% for connection in connections %}
+        <li>
+          <p>{{connection.start_time}} : {{connection.start_point}} <span class="glyphicon glyphicon-menu-right"></span> {{connection.end_point}}</p>
+        </li>
+    {% endfor %}
+    </ul>
+    <br>
+      <p><h2 class="fs-subtitle">Return</h2></p>
+    <p><span class="glyphicon glyphicon-pushpin"></span>         {{origin}}</p>
+    <p><span class="glyphicon glyphicon-transfer"></span>        {{connections_return_nb}}</p>
+    <p><span class="glyphicon glyphicon-piggy-bank"></span>      {{price_return}} CHF</p>
+    <p><span class="glyphicon glyphicon-time"></span>      {{duration_return}}</p>
+    <br>
+    <ul id="navigation_return" >
+    {% for connection in connections_return %}
+        <li>
+          <p>{{connection.start_time}} : {{connection.start_point}} <span class="glyphicon glyphicon-menu-right"></span> {{connection.end_point}}</p>
+        </li>
+    {% endfor %}
+    </ul>
+        <br><br>
+      <div align="left">
+      <p><h2 class="fs-subtitle">Total price: {{total_price}} CHF</h2></p>
+      </div>
+      <br>
+        {% if is_hike %}
+      <p><h2 class="fs-subtitle">Hiking information</h2></p>
+        <p>Name: {{hike_name}}</p>
+    <p>Duration: {{hike_duration}}</p>
+        <p>Length: {{hike_length}} km</p>
+        <p>Altitude: {{hike_asc}}</p>
+    <br>
+        {% endif %}
+        </div>
+      <h3 class="fs-subtitle">Enjoy your trip!</h3>
+
+    <a href="{{img_url}}"><img src="{{img}}" id="picture" align="left"/></a>
+
+</div>
+
+  <div id="map" style="width:100%;height:400px;"></div>
+
+  <div class="flyingHero1">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+<!--  FIRST -->
+  <div class="flyingHero2">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero4">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero5">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+<!--&lt;!&ndash;  SECOND &ndash;&gt;-->
+    <div class="flyingHero6">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero7">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+
+  <div class="flyingHero9">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero10">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+<!--  THIRD -->
+    <div class="flyingHero11">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero13">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero14">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero15">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+<!--&lt;!&ndash;  FOURTH &ndash;&gt;-->
+    <div class="flyingHero16">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero17">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+
+  <div class="flyingHero19">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero20">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+<!--  FIFTH -->
+
+  <div class="flyingHero22">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero23">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+  <div class="flyingHero25">
+    <img src="{{url_for('static', filename='img/b.png')}}">
+  </div>
+
+<script>
+
+      // This example creates a 2-pixel-wide red polyline showing the path of
+      // the first trans-Pacific flight between Oakland, CA, and Brisbane,
+      // Australia which was made by Charles Kingsford Smith.
+var lat_d = {{lat_d}};
+var lat_o = {{lat_o}};
+var lon_d = {{lon_d}};
+var lon_o = {{lon_o}};
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat: (lat_o + lat_d) / 2, lng: (lon_o + lon_d) / 2},
+          mapTypeId: 'roadmap'
+        });
+
+        var flightPlanCoordinates = [
+          {lat: lat_o, lng: lon_o},
+          {lat: lat_d, lng: lon_d}
+        ];
+        var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        flightPath.setMap(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=TODO_KEY&callback=initMap">
+    </script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+<script src="{{url_for('static', filename='script.js')}}"></script>
+
+</body>
+</html>

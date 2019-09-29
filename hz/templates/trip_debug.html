@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Hello Page{% endblock %}
+{% block content %}
+<table style="width:100%">
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+    {% for k, v in trip_details.items() %}
+  <tr>
+    <td>{{k}}</td>
+    <td>{{v}}</td>
+  </tr>
+    {% endfor %}
+</table>
+{% endblock %}

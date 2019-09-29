@@ -1,0 +1,597 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+	/*Image only BG fallback*/
+	
+	/*background = gradient + image pattern combo*/
+	background:
+		linear-gradient(rgba(92.5%, 10.6%, 14.1%, 1), rgba(92.5%, 10.6%, 14.1%, 1));
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+	background:
+		linear-gradient(rgba(92.5%, 10.6%, 14.1%, 1), rgba(92.5%, 10.6%, 14.1%, 1));
+	z-index: -3;
+}
+
+/*form styles*/
+#msform {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+    z-index: 0;
+}
+
+#nice_box {
+	background: white;
+	border: 0 none;
+	padding: 40px 40px 40px 40px;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	margin: 0 10%;
+}
+
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+#bar {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+/*inputs*/
+#msform input, #msform textarea, #msform select, #msform option {
+	background: white;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: #404040;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #404040;
+}
+
+#picture {
+
+	position: absolute;
+	top: 60px;
+    right: 400px;
+    object-fit: cover;
+
+
+  width: 400px;
+  height: 300px;
+
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+
+#map {
+	position: absolute;
+	top: 60px;
+    left: 400px;
+	width: 100%;
+    height: auto;
+
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+/*headings*/
+.fs-title {
+	font-size: 25px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 20px;
+	color: #666;
+	margin-bottom: 20px;
+}
+.fs-subtitle2 {
+	font-weight: bold;
+	font-size: 20px;
+	color: #333333;
+	margin-bottom: 20px;
+}
+
+.nav-pills>li.active>a {
+    background-color: rgba(92.5%, 10.6%, 14.1%, 1.0);
+    color: white;
+    font-weight: bold;
+    opacity: 80%;
+}
+.nav-pills>li.active:hover>a {
+    background-color: #BF2929;
+    color: white;
+    font-weight: bold;
+}
+
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+
+.specific-element {
+	color: #333;
+}
+
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #404040;
+	color: white;
+}
+
+
+/* ANIMATION */
+
+/*FIRST*/
+.flyingHero1 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly1 6s 1;
+}
+.flyingHero1 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly1 {
+	from {left:55px; top:600px;}
+	to {left:60px; top:-600px;}
+}
+.flyingHero2 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly2 6s 1;
+}
+.flyingHero2 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly2 {
+	0% {left:150px; top:500px;}
+	100% {left:150px; top:-800px;}
+}
+.flyingHero3 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly3 8s 1;
+}
+.flyingHero3 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly3 {
+	0% {left:200px; top:600px;}
+	100% {left:200px; top:-1000px;}
+}
+.flyingHero4 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly4 8s 1;
+}
+.flyingHero4 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly4 {
+	0% {left:245px; top:600px;}
+	100% {left:255px; top:-1200px;}
+}
+
+.flyingHero5 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly5 8s 1;
+}
+.flyingHero5 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly5 {
+	0% {left:280px; top:700px;}
+	100% {left:280px; top:-1000px;}
+}
+
+
+/*SECOND*/
+.flyingHero6 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly6 8s 1;
+}
+.flyingHero6 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly6 {
+	from {left:300px; top:600px;}
+	to {left:300px; top:-600px;}
+}
+.flyingHero7 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly7 8s 1;
+}
+.flyingHero7 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly7 {
+	0% {left:320px; top:500px;}
+	100% {left:320px; top:-1000px;}
+}
+.flyingHero8 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly8 8s 1;
+}
+.flyingHero8 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly8 {
+	0% {left:340px; top:600px;}
+	100% {left:340px; top:-1200px;}
+}
+.flyingHero9 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly9 8s 1;
+}
+.flyingHero9 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly9 {
+	0% {left:370px; top:600px;}
+	100% {left:370px; top:-900px;}
+}
+
+.flyingHero10 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly10 8s 1;
+}
+.flyingHero10 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly10 {
+	0% {left:430px; top:700px;}
+	100% {left:430px; top:-700px;}
+}
+
+/*THIRD*/
+.flyingHero11 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly11 6s 1;
+}
+.flyingHero11 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly11 {
+	from {left:480px; top:600px;}
+	to {left:480px; top:-900px;}
+}
+.flyingHero12 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly12 8s 1;
+}
+.flyingHero12 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly12 {
+	0% {left:500px; top:500px;}
+	100% {left:505px; top:-1300px;}
+}
+.flyingHero13 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly13 8s 1;
+}
+.flyingHero13 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly13 {
+	0% {left:520px; top:600px;}
+	100% {left:520px; top:-800px;}
+}
+.flyingHero14 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly14 8s 1;
+}
+.flyingHero14 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly14 {
+	0% {left:550px; top:600px;}
+	100% {left:550px; top:-1500px;}
+}
+.flyingHero15 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly15 8s 1;
+}
+.flyingHero15 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly15 {
+	0% {left:560px; top:700px;}
+	100% {left:560px; top:-1100px;}
+}
+
+
+/*FOURTH*/
+.flyingHero16 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly16 8s 1;
+}
+.flyingHero16 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly16 {
+	from {left:622px; top:600px;}
+	to {left:620px; top:-800px;}
+}
+.flyingHero17 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly17 8s 1;
+}
+.flyingHero17 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly17 {
+	0% {left:635px; top:500px;}
+	100% {left:650px; top:-1400px;}
+}
+.flyingHero18 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly18 8s 1;
+}
+.flyingHero18 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly18 {
+	0% {left:720px; top:600px;}
+	100% {left:720px; top:-1300px;}
+}
+.flyingHero19 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly19 8s 1;
+}
+.flyingHero19 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly19 {
+	0% {left:770px; top:600px;}
+	100% {left:770px; top:-1500px;}
+}
+
+.flyingHero20 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly20 8s 1;
+}
+.flyingHero20 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly20 {
+	0% {left:800px; top:700px;}
+	100% {left:800px; top:-1700px;}
+}
+
+/*FIFTH*/
+.flyingHero21 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly21 6s 1;
+}
+.flyingHero21 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly21 {
+	from {left:830px; top:600px;}
+	to {left:840px; top:-1600px;}
+}
+.flyingHero22 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly22 8s 1;
+}
+.flyingHero22 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly22 {
+	0% {left:900px; top:500px;}
+	100% {left:900px; top:-1200px;}
+}
+.flyingHero23 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly23 8s 1;
+}
+.flyingHero23 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly23 {
+	0% {left:980px; top:600px;}
+	100% {left:980px; top:-1300px;}
+}
+.flyingHero24 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly24 8s 1;
+}
+.flyingHero24 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly24 {
+	0% {left:1000px; top:600px;}
+	100% {left:1000px; top:-1500px;}
+}
+
+.flyingHero25 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly25 8s 1;
+}
+.flyingHero25 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly25 {
+	0% {left:1100px; top:700px;}
+	100% {left:1100px; top:-1600px;}
+}
+
+.flyingHero30 {
+  position: fixed;
+  left: -500px;
+  top: 0%;
+  animation: fly30 8s 100;
+}
+.flyingHero30 img {
+  position: relative;
+  height: 100px;
+}
+@keyframes fly30 {
+	0% {left:1100px; top:700px;}
+	100% {left:1100px; top:-1600px;}
+}
+
+.center {
+  display: block;
+  left: 200px;
+    width:20%;
+    height: auto;
+}
